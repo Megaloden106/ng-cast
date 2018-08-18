@@ -1,6 +1,6 @@
 angular.module('video-player')
   .component('app', {
-    controller: function($scope, youTube) {
+    controller: function(youTube) {
       youTube.search({query: 'kittens'}, (data) => {
         this.videos = data;
         this.currentVideo = data[0];

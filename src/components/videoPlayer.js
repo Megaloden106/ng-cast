@@ -3,20 +3,14 @@ angular.module('video-player')
     bindings: {
       video: '<'
     },
-    controller: function($scope) {
-      // $scope.video = this.video;
-      // this.test = () => console.log('video', $scope.video)
+    controller: function() {
       this.url = () => {
-        let link = 'https://www.youtube.com/embed/'
+        let link = 'https://www.youtube.com/embed/';
         this.video 
           ? link += this.video.id.videoId
           : link += '';
         return link;
       };
-
-      this.hasLink = () => {
-        return this.video !== undefined;
-      }
     },
     templateUrl: 'src/templates/videoPlayer.html'
   });
