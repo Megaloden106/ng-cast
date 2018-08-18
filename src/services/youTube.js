@@ -1,5 +1,5 @@
 angular.module('video-player')
-  .service('youTube', function($http){
+  .service('youTube', function($http) {
     this.search = ({query, key = YOUTUBE_API_KEY, max = 5}, callback) => {
       $http({
         method: 'GET',
@@ -13,6 +13,6 @@ angular.module('video-player')
           videoEmbeddable: 'true'
         }
       })
-        .then(response => callback(response.data.items))
-    }
+        .then(response => callback(response.data.items));
+    };
   });

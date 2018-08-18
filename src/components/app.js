@@ -8,15 +8,14 @@ angular.module('video-player')
 
       this.searchResults = (query) => {
         youTube.search({query}, (data) => {
-          console.log(data)
           this.videos = data;
           this.currentVideo = data[0];
         });
-      }
+      };
       
       this.selectVideo = (video) => {
         this.currentVideo = video;
-      }
+      };
     },
     templateUrl: 'src/templates/app.html'
   });
