@@ -6,12 +6,12 @@ angular.module('video-player')
         this.currentVideo = data[0];
       });
 
-      this.searchResults = (query) => {
-        youTube.search({query}, (data) => {
-          this.videos = data;
-          this.currentVideo = data[0];
-        });
+      this.searchResults = (data) => {
+        this.videos = data;
+        this.currentVideo = data[0];
       };
+
+      this.service = youTube;
       
       this.selectVideo = (video) => {
         this.currentVideo = video;
